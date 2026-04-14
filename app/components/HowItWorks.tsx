@@ -1,21 +1,17 @@
 "use client";
 
 const steps = [
-  {number:"01",title:"Strategy",body:"We audit your brand, your audience, and your competitors. Then we build a content strategy around what performs in your niche — not guesswork, not templates."},
+  {number:"01",title:"Strategy",body:"We audit your brand, audience, and competitors. Then build a content strategy around what performs in your niche — not guesswork, not templates."},
   {number:"02",title:"Create",body:"AI-assisted content creation across formats — short-form video scripts, captions, graphics, hooks. Everything built to your brand voice and optimized to stop the scroll."},
-  {number:"03",title:"Post",body:"We handle scheduling and publishing across every platform on your content calendar. Consistent, on-brand, and timed to when your audience is actually online."},
+  {number:"03",title:"Post",body:"We handle scheduling and publishing across every platform on your content calendar — consistent, on-brand, timed to when your audience is actually online."},
   {number:"04",title:"Optimize",body:"Every week you get a performance breakdown showing what's working, what's growing, and where we're doubling down. Your content improves every cycle."},
 ];
 
 const deliverables = [
-  {icon:"📋",label:"Monthly Content Strategy"},
-  {icon:"🎬",label:"Short-Form Video Scripts"},
-  {icon:"🖼️",label:"Graphics & Visual Content"},
-  {icon:"✍️",label:"AI-Written Captions"},
-  {icon:"📅",label:"Scheduled Posting"},
-  {icon:"📊",label:"Performance Dashboard"},
-  {icon:"📈",label:"Weekly Growth Reports"},
-  {icon:"🎯",label:"Audience & Niche Analysis"},
+  {icon:"📋",label:"Monthly Content Strategy"},{icon:"🎬",label:"Short-Form Video Scripts"},
+  {icon:"🖼️",label:"Graphics & Visual Content"},{icon:"✍️",label:"AI-Written Captions"},
+  {icon:"📅",label:"Scheduled Posting"},{icon:"📊",label:"Performance Dashboard"},
+  {icon:"📈",label:"Weekly Growth Reports"},{icon:"🎯",label:"Audience & Niche Analysis"},
   {icon:"🔁",label:"Content Repurposing"},
 ];
 
@@ -66,12 +62,11 @@ export default function HowItWorks() {
             "We build the strategy, create the content, post it consistently, and optimize based on live data — so your brand grows while you focus on running your business."
           </p>
           <p className="text-slate-400 text-sm md:text-base leading-[1.7]" style={{fontFamily:"var(--font-body)"}}>
-            Most businesses try posting themselves and burn out, or hire someone who doesn't understand their niche. We've been doing this for 3+ years and built frameworks that consistently generate real reach.{" "}
+            Most businesses try posting themselves and burn out, or hire someone who doesn't understand their niche. We've been doing this for 3+ years.{" "}
             <span className="text-purple-400 font-medium">Content that performs isn't luck — it's structure.</span>
           </p>
         </div>
 
-        {/* Dashboard callout */}
         <div className="mt-4 md:mt-5 reveal">
           <div className="solution-card p-5 md:p-7 flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-6">
             <div className="text-3xl md:text-4xl flex-shrink-0">📊</div>

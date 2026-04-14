@@ -26,24 +26,23 @@ export default function Book() {
         style={{background:"radial-gradient(circle,rgba(147,51,234,.04) 0%,transparent 70%)"}}/>
 
       <div className="max-w-5xl mx-auto px-5 md:px-10">
-        <div className="text-center max-w-xl mx-auto mb-7 md:mb-8">
+        <div className="text-center max-w-xl mx-auto mb-7">
           <div className="inline-flex items-center gap-2 bg-purple-950/50 border border-purple-700/30 rounded-full px-4 py-1.5 mb-5">
             <span className="w-1.5 h-1.5 bg-purple-400 rounded-full animate-pulse"/>
             <span className="text-purple-300 text-xs tracking-widest uppercase" style={{fontFamily:"var(--font-mono)"}}>Next Step</span>
           </div>
           <h2 className="text-2xl sm:text-4xl md:text-5xl text-white leading-tight tracking-tight mb-4"
             style={{fontFamily:"var(--font-display)",fontWeight:800}}>
-            Let's Build Your{" "}
-            <span className="text-purple-400">Social Presence</span>
+            Let's Build Your <span className="text-purple-400">Social Presence</span>
           </h2>
           <p className="text-slate-400 text-base md:text-xl leading-[1.7]" style={{fontFamily:"var(--font-body)"}}>
-            We audit your current presence, show you the strategy we'd build for your business, and you leave with a clear picture of what consistent content looks like for your brand.
+            We audit your current presence, show you the strategy we'd build, and you leave with a clear picture of what consistent content looks like for your brand.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4 mb-7 md:mb-8 reveal">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-7 reveal">
           {[
-            {icon:"🔍",label:"Audit your presence",desc:"We review your current accounts, content, and where the biggest growth opportunities are"},
+            {icon:"🔍",label:"Audit your presence",desc:"We review your current accounts and where the biggest growth opportunities are"},
             {icon:"📋",label:"Show you the strategy",desc:"We map out your content pillars, platforms, and posting cadence before we start"},
             {icon:"🚀",label:"Define the scope",desc:"Deliverables, timeline, add-ons, and what we need from you to get started"},
           ].map(item => (

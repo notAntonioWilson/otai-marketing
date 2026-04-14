@@ -7,13 +7,13 @@ export default function Hero() {
     const canvas = canvasRef.current; if (!canvas) return;
     const ctx = canvas.getContext("2d"); if (!ctx) return;
     canvas.width = window.innerWidth; canvas.height = window.innerHeight;
-    const p: { x:number;y:number;vx:number;vy:number;size:number;opacity:number }[] = [];
-    for (let i = 0; i < 50; i++) p.push({ x:Math.random()*canvas.width, y:Math.random()*canvas.height, vx:(Math.random()-.5)*.25, vy:(Math.random()-.5)*.25, size:Math.random()*1.2+.3, opacity:Math.random()*.4+.05 });
+    const p: {x:number;y:number;vx:number;vy:number;size:number;opacity:number}[] = [];
+    for (let i = 0; i < 50; i++) p.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,vx:(Math.random()-.5)*.25,vy:(Math.random()-.5)*.25,size:Math.random()*1.2+.3,opacity:Math.random()*.4+.05});
     let id: number;
     const draw = () => {
       ctx.clearRect(0,0,canvas.width,canvas.height);
-      p.forEach(pt => { pt.x+=pt.vx; pt.y+=pt.vy; if(pt.x<0||pt.x>canvas.width)pt.vx*=-1; if(pt.y<0||pt.y>canvas.height)pt.vy*=-1; ctx.beginPath(); ctx.arc(pt.x,pt.y,pt.size,0,Math.PI*2); ctx.fillStyle=`rgba(147,51,234,${pt.opacity})`; ctx.fill(); });
-      for (let i=0;i<p.length;i++) for (let j=i+1;j<p.length;j++) { const dx=p[i].x-p[j].x,dy=p[i].y-p[j].y,d=Math.sqrt(dx*dx+dy*dy); if(d<100){ctx.beginPath();ctx.moveTo(p[i].x,p[i].y);ctx.lineTo(p[j].x,p[j].y);ctx.strokeStyle=`rgba(147,51,234,${.06*(1-d/100)})`;ctx.lineWidth=.5;ctx.stroke();} }
+      p.forEach(pt => {pt.x+=pt.vx;pt.y+=pt.vy;if(pt.x<0||pt.x>canvas.width)pt.vx*=-1;if(pt.y<0||pt.y>canvas.height)pt.vy*=-1;ctx.beginPath();ctx.arc(pt.x,pt.y,pt.size,0,Math.PI*2);ctx.fillStyle=`rgba(147,51,234,${pt.opacity})`;ctx.fill();});
+      for (let i=0;i<p.length;i++) for (let j=i+1;j<p.length;j++) {const dx=p[i].x-p[j].x,dy=p[i].y-p[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<100){ctx.beginPath();ctx.moveTo(p[i].x,p[i].y);ctx.lineTo(p[j].x,p[j].y);ctx.strokeStyle=`rgba(147,51,234,${.06*(1-d/100)})`;ctx.lineWidth=.5;ctx.stroke();}}
       id=requestAnimationFrame(draw);
     };
     draw();
@@ -30,7 +30,6 @@ export default function Hero() {
           style={{background:"radial-gradient(circle,rgba(147,51,234,.06) 0%,transparent 65%)"}}/>
       </div>
 
-      {/* Floating stat tags — desktop only */}
       <div className="absolute top-28 right-12 hidden lg:block animate-float opacity-25" style={{animationDelay:"0s"}}>
         <StatTag label="2M views — single post" color="#a855f7"/>
       </div>
@@ -44,7 +43,7 @@ export default function Hero() {
       <div className="relative z-10 w-full max-w-6xl mx-auto px-5 md:px-10 text-center pt-28 pb-10">
         <div className="inline-flex items-center gap-2 bg-purple-950/50 border border-purple-800/40 rounded-full px-4 py-2 mb-5">
           <span className="w-1.5 h-1.5 bg-purple-400 rounded-full animate-pulse"/>
-          <span className="text-purple-300 text-xs tracking-widest uppercase" style={{fontFamily:"var(--font-mono)"}}>3+ Years · 20M+ Views · Real Results</span>
+          <span className="text-purple-300 text-xs tracking-widest uppercase" style={{fontFamily:"var(--font-mono)"}}>3+ Years · 30M+ Views · Real Results</span>
         </div>
 
         <h1 className="text-3xl sm:text-5xl md:text-6xl text-white leading-[1.08] mb-4 tracking-tight"
