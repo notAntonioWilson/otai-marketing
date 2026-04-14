@@ -60,56 +60,56 @@ export default function Dashboard() {
               </div>
             </div>
 
-            <div className="p-4 md:p-6 space-y-5 md:space-y-6">
+            <div className="p-4 md:p-5">
+              {/* Single tight grid — all content in one view */}
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
 
-              {/* Aggregate row */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                {[
-                  {label:"Total Views",value:"4,881,860",color:"#a855f7"},
-                  {label:"Total Engagement",value:"45,491",color:"#22c55e"},
-                  {label:"Total Followers",value:"5,082+",color:"#c084fc"},
-                  {label:"Posts Published",value:"84",color:"#f97316"},
-                ].map(s => (
-                  <div key={s.label} className="solution-card p-3 md:p-4 text-center">
-                    <div className="text-lg md:text-2xl font-bold mb-1" style={{color:s.color,fontFamily:"var(--font-display)"}}>{s.value}</div>
-                    <div className="text-slate-500 text-xs" style={{fontFamily:"var(--font-body)"}}>{s.label}</div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Platform breakdown + Top content */}
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
+                {/* Left: stats + platform breakdown */}
                 <div className="lg:col-span-2 space-y-3">
-                  <h3 className="text-white font-semibold text-sm md:text-base" style={{fontFamily:"var(--font-display)"}}>Platform Breakdown</h3>
-                  {platforms.map(p => (
-                    <div key={p.name} className="flex items-center gap-3 md:gap-4 p-3 rounded-lg" style={{background:"rgba(147,51,234,0.05)",border:"1px solid rgba(147,51,234,0.1)"}}>
-                      <div className="w-2 h-2 rounded-full flex-shrink-0" style={{backgroundColor:p.color}}/>
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-center justify-between mb-1">
-                          <span className="text-white text-sm font-semibold" style={{fontFamily:"var(--font-display)"}}>{p.name}</span>
-                          <span className="text-slate-500 text-xs" style={{fontFamily:"var(--font-mono)"}}>{p.followers} followers</span>
-                        </div>
-                        <div className="flex items-center gap-3 md:gap-4">
-                          <span className="text-xs text-slate-400" style={{fontFamily:"var(--font-body)"}}>{p.views} views</span>
-                          <span className="text-xs text-slate-600">·</span>
-                          <span className="text-xs text-slate-400" style={{fontFamily:"var(--font-body)"}}>{p.engagement} engagement</span>
-                          <span className="text-xs text-slate-600">·</span>
-                          <span className="text-xs text-slate-400" style={{fontFamily:"var(--font-body)"}}>{p.posts} posts</span>
-                        </div>
+                  {/* Aggregate stats — compact inline row */}
+                  <div className="grid grid-cols-4 gap-2">
+                    {[
+                      {label:"Views",value:"4,881,860",color:"#a855f7"},
+                      {label:"Engagement",value:"45,491",color:"#22c55e"},
+                      {label:"Followers",value:"5,082+",color:"#c084fc"},
+                      {label:"Posts",value:"84",color:"#f97316"},
+                    ].map(s => (
+                      <div key={s.label} className="solution-card p-2.5 text-center">
+                        <div className="text-base md:text-lg font-bold" style={{color:s.color,fontFamily:"var(--font-display)"}}>{s.value}</div>
+                        <div className="text-slate-500 text-xs mt-0.5" style={{fontFamily:"var(--font-body)"}}>{s.label}</div>
                       </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
+
+                  {/* Platform rows */}
+                  <div className="space-y-1.5">
+                    <p className="text-slate-500 text-xs uppercase tracking-wider mb-2" style={{fontFamily:"var(--font-mono)"}}>Platform Breakdown</p>
+                    {platforms.map(p => (
+                      <div key={p.name} className="flex items-center gap-3 px-3 py-2 rounded-lg" style={{background:"rgba(147,51,234,0.05)",border:"1px solid rgba(147,51,234,0.1)"}}>
+                        <div className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{backgroundColor:p.color}}/>
+                        <span className="text-white text-sm font-semibold w-20 flex-shrink-0" style={{fontFamily:"var(--font-display)"}}>{p.name}</span>
+                        <div className="flex items-center gap-2 md:gap-3 flex-1 min-w-0 text-xs text-slate-400" style={{fontFamily:"var(--font-body)"}}>
+                          <span>{p.views} views</span>
+                          <span className="text-slate-700">·</span>
+                          <span>{p.engagement} eng</span>
+                          <span className="text-slate-700">·</span>
+                          <span>{p.posts} posts</span>
+                        </div>
+                        <span className="text-slate-500 text-xs flex-shrink-0 hidden sm:block" style={{fontFamily:"var(--font-mono)"}}>{p.followers} followers</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
 
-                {/* Top content + activity */}
-                <div className="space-y-4">
+                {/* Right: top content + activity stacked tight */}
+                <div className="space-y-3">
                   <div>
-                    <h3 className="text-white font-semibold text-sm md:text-base mb-3" style={{fontFamily:"var(--font-display)"}}>Top Performing Content</h3>
-                    <div className="space-y-2">
+                    <p className="text-slate-500 text-xs uppercase tracking-wider mb-2" style={{fontFamily:"var(--font-mono)"}}>Top Content</p>
+                    <div className="space-y-1.5">
                       {topContent.map((item,i) => (
-                        <div key={i} className="flex items-center justify-between gap-2 p-2.5 rounded-lg" style={{background:"rgba(147,51,234,0.05)",border:"1px solid rgba(147,51,234,0.08)"}}>
+                        <div key={i} className="flex items-center justify-between gap-2 px-2.5 py-2 rounded-lg" style={{background:"rgba(147,51,234,0.05)",border:"1px solid rgba(147,51,234,0.08)"}}>
                           <div className="flex items-center gap-2 min-w-0">
-                            <span className="text-purple-700 text-xs font-bold flex-shrink-0" style={{fontFamily:"var(--font-mono)"}}>{i+1}</span>
+                            <span className="text-purple-800 text-xs font-bold flex-shrink-0 w-3" style={{fontFamily:"var(--font-mono)"}}>{i+1}</span>
                             <span className="text-slate-300 text-xs truncate" style={{fontFamily:"var(--font-body)"}}>{item.title}</span>
                           </div>
                           <span className="text-purple-400 text-xs font-semibold flex-shrink-0" style={{fontFamily:"var(--font-mono)"}}>{item.views}</span>
@@ -119,16 +119,16 @@ export default function Dashboard() {
                   </div>
 
                   <div>
-                    <h3 className="text-white font-semibold text-sm md:text-base mb-3" style={{fontFamily:"var(--font-display)"}}>Recent Activity</h3>
-                    <div className="space-y-2">
+                    <p className="text-slate-500 text-xs uppercase tracking-wider mb-2" style={{fontFamily:"var(--font-mono)"}}>Recent Activity</p>
+                    <div className="space-y-1.5">
                       {recentActivity.map((item,i) => {
                         const dotColor = item.status==="live"?"#22c55e":item.status==="report"?"#a855f7":item.status==="approved"?"#f97316":"#64748b";
                         return (
-                          <div key={i} className="flex items-start gap-2.5 p-2.5 rounded-lg" style={{background:"rgba(147,51,234,0.05)",border:"1px solid rgba(147,51,234,0.08)"}}>
-                            <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{backgroundColor:dotColor}}/>
-                            <div className="flex-1 min-w-0">
+                          <div key={i} className="flex items-start gap-2 px-2.5 py-2 rounded-lg" style={{background:"rgba(147,51,234,0.05)",border:"1px solid rgba(147,51,234,0.08)"}}>
+                            <span className="mt-1 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{backgroundColor:dotColor}}/>
+                            <div className="min-w-0">
                               <p className="text-slate-300 text-xs leading-snug" style={{fontFamily:"var(--font-body)"}}>{item.action}</p>
-                              <p className="text-slate-600 text-xs mt-0.5" style={{fontFamily:"var(--font-mono)"}}>{item.time}</p>
+                              <p className="text-slate-600 text-xs" style={{fontFamily:"var(--font-mono)"}}>{item.time}</p>
                             </div>
                           </div>
                         );
