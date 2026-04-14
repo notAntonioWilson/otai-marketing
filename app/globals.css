@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root{--font-display:'Plus Jakarta Sans',sans-serif;--font-body:'Outfit',sans-serif;--font-mono:'JetBrains Mono',monospace;}
+*{box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{background-color:#050510;color:#e2e8f0;font-family:var(--font-body);overflow-x:hidden;}
+::-webkit-scrollbar{width:4px;}::-webkit-scrollbar-track{background:#050510;}::-webkit-scrollbar-thumb{background:#7c3aed;border-radius:2px;}
+.grid-texture{background-image:linear-gradient(rgba(147,51,234,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(147,51,234,.03) 1px,transparent 1px);background-size:60px 60px;}
+.glow-purple{box-shadow:0 0 30px rgba(147,51,234,.3),0 0 60px rgba(147,51,234,.1);}
+.glow-text{text-shadow:0 0 40px rgba(147,51,234,.5);}
+.pain-card{background:rgba(239,68,68,.07);border:1px solid rgba(239,68,68,.25);border-radius:12px;}
+.solution-card{background:rgba(147,51,234,.07);border:1px solid rgba(147,51,234,.3);border-radius:12px;}
+.gradient-border{background:linear-gradient(#0a0a1f,#0a0a1f) padding-box,linear-gradient(135deg,#9333ea,#4f46e5,#9333ea) border-box;border:1px solid transparent;border-radius:12px;}
+.nav-blur{backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);background:rgba(5,5,16,.9);border-bottom:1px solid rgba(147,51,234,.12);}
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s ease,transform .8s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@keyframes fadeUp{0%{opacity:0;transform:translateY(30px)}100%{opacity:1;transform:translateY(0)}}
+.animate-float{animation:float 6s ease-in-out infinite;}
+#my-cal-inline-otai-s-m--marketing{min-height:620px;}
+#my-cal-inline-otai-s-m--marketing>div,#my-cal-inline-otai-s-m--marketing iframe{box-shadow:none!important;border:none!important;}
+@media(max-width:767px){.grid-cols-2{grid-template-columns:1fr!important;}}
+@media(max-width:640px){h1{font-size:2.4rem!important;line-height:1.1!important;}h2{font-size:1.9rem!important;}a,button{min-height:44px;}}
